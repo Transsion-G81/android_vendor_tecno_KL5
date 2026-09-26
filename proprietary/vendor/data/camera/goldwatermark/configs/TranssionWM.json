@@ -1,0 +1,362 @@
+{
+	"ALGORITHM": "WATERMARK",
+	"WATERMARK": {
+		"PARAMS_VERSION": "1.0.0",
+		"ALGO_VERSION_REQUIRED": null,
+		"PLATFORM_PERFORMANCE": 2,
+		"WM_STYLES": [ "SPARK30" ],
+		"WM_CUSTOMIZED_STYLE_REQUIRED": "SPARK30",
+
+
+		"FONT_DIR": "resources/fonts/",
+		"ICON_DIR": "resources/icons/",
+
+
+
+		"SPARK30": {
+
+			"BAR_HEIGHT_PORTRAIT": 113,
+			"BAR_HEIGHT_LANDSCAPE": 95,
+			"BAR_WIDTH": 1080,
+			"BACKDROP_IS_VALID": true,
+			"BACKDROP": {
+				"BACKDROP_FILE_NAME": "KLBackground.svg",
+				"BACKDROP_COORDINATE_PORTRAIT": [ 539.0, 113.0 ],
+				"BACKDROP_COORDINATE_LANDSCAPE": [ 638.0, 95.0 ],
+				"BACKDROP_WIDTH_PORTRAIT": 541.0,
+				"BACKDROP_WIDTH_LANDSCAPE": 442.0,
+				"BACKDROP_HEIGHT_PORTRAIT": 113.0,
+				"BACKDROP_HEIGHT_LANDSCAPE": 95.0
+			},
+
+			"TEXT_BRAND_IS_VALID": true,
+			"TEXT_BRAND_NAME": "SPARK 30C",
+
+			"MODE_PROFILES": [
+				{
+					"RENDER_MODE": 1,
+					"ICON_PROFILE": {
+						"ICON_FILE_NAME": "RedPoint-kl.svg",
+						"ICON_COORDINATE_PORTRAIT": [ 0.0, 68.0 ],
+						"ICON_COORDINATE_LANDSCAPE": [ 0.0, 57.0 ],
+						"TUNING_COORDINATE_PORTRAIT": [ -10.0, 0.0 ],
+						"TUNING_COORDINATE_LANDSCAPE": [ -10.0, 0.0 ],
+						"ICON_WIDTH_PORTRAIT": 23.0,
+						"ICON_WIDTH_LANDSCAPE": 18.0,
+						"ICON_HEIGHT_PORTRAIT": 23.0,
+						"ICON_HEIGHT_LANDSCAPE": 18.0,
+						"RELY_ON_ELEM": true,
+						"RELY_INFORMATION": {
+							"这是一条提示信息：@RELY_TYPE": "0=TEXT; 1=ICON",
+							"RELY_TYPE": 0,
+							"RELY_INDEX": 1,
+							"RELT_ON_LEFT_X": true,
+							"RELATIVE_X": 0.0
+						}
+					},
+
+
+					"TEXT_BRAND": {
+						"FONT_PROFILE": {
+							"FONT_FILE_NAME": "HurmeGeometricSans3_SemiBold.otf",
+							"FONT_SIZE_PORTRAIT": 29.0,
+							"FONT_SIZE_LANDSCAPE": 22.0,
+							"FONT_COLOR": [ 0.0, 0.0, 0.0 ],
+							"FONT_INTENSITY": 1.0
+						},
+						"SPACE_RATIO": 0.30,
+						"CHARACTER_DISTANCE_RATIO": 0.0,
+						"TEXT_COORDINATE_PORTRAIT": [ 39.0, 71.0 ],
+						"TEXT_COORDINATE_LANDSCAPE": [ 30.0, 61.0 ],
+						"这是一条提示信息：@RENDER_DIRECTION": "0=向右绘制; 1=向左绘制",
+						"RENDER_DIRECTION": 0,
+						"RELY_ON_ELEM": false
+					},
+
+
+					"TEXT_IMAGING": {
+						"FONT_PROFILE": {
+							"FONT_FILE_NAME": "HurmeGeometricSans3_SemiBold.otf",
+							"FONT_SIZE_PORTRAIT": 23.0,
+							"FONT_SIZE_LANDSCAPE": 18.0,
+							"FONT_COLOR": [ 0.0, 0.0, 0.0 ],
+							"FONT_INTENSITY": 1.0
+						},
+						"SPACE_RATIO": 0.30,
+						"CHARACTER_DISTANCE_RATIO": 0.0,
+						"TEXT_COORDINATE_PORTRAIT": [ 1041.0, 68.0 ],
+						"TEXT_COORDINATE_LANDSCAPE": [ 1050.0, 57.0 ],
+						"RENDER_DIRECTION": 1,
+						"RELY_ON_ELEM": false
+					}
+				},
+
+
+
+
+
+				{
+					"RENDER_MODE": 2,
+					"ICON_PROFILE": {
+						"ICON_FILE_NAME": "RedPoint-kl.svg",
+						"ICON_COORDINATE_PORTRAIT": [ 0.0, 68.0 ],
+						"ICON_COORDINATE_LANDSCAPE": [ 0.0, 57.0 ],
+						"TUNING_COORDINATE_PORTRAIT": [ -10.0, 0.0 ],
+						"TUNING_COORDINATE_LANDSCAPE": [ -10.0, 0.0 ],
+						"ICON_WIDTH_PORTRAIT": 23.0,
+						"ICON_WIDTH_LANDSCAPE": 18.0,
+						"ICON_HEIGHT_PORTRAIT": 23.0,
+						"ICON_HEIGHT_LANDSCAPE": 18.0,
+						"RELY_ON_ELEM": true,
+						"RELY_INFORMATION": {
+							"这是一条提示信息：@RELY_TYPE": "0=TEXT; 1=ICON",
+							"RELY_TYPE": 0,
+							"RELY_INDEX": 2,
+							"RELT_ON_LEFT_X": true,
+							"RELATIVE_X": 0.0
+						}
+					},
+
+
+					"TEXT_BRAND": {
+						"FONT_PROFILE": {
+							"FONT_FILE_NAME": "HurmeGeometricSans3_SemiBold.otf",
+							"FONT_SIZE_PORTRAIT": 24.0,
+							"FONT_SIZE_LANDSCAPE": 18.0,
+							"FONT_COLOR": [ 0.0, 0.0, 0.0 ],
+							"FONT_INTENSITY": 1.0
+						},
+						"SPACE_RATIO": 0.30,
+						"CHARACTER_DISTANCE_RATIO": 0.0,
+						"TEXT_COORDINATE_PORTRAIT": [ 39.0, 54.0 ],
+						"TEXT_COORDINATE_LANDSCAPE": [ 30.0, 46.0 ],
+						"RENDER_DIRECTION": 0,
+						"RELY_ON_ELEM": false
+					},
+
+
+					"TEXT_DATE_AND_TIME": {
+						"FONT_PROFILE": {
+							"FONT_FILE_NAME": "HurmeGeometricSans_No3_4_Regular.otf",
+							"FONT_SIZE_PORTRAIT": 19.0,
+							"FONT_SIZE_LANDSCAPE": 15.0,
+							"FONT_COLOR": [ 0.0, 0.0, 0.0 ],
+							"FONT_INTENSITY": 0.5
+						},
+						"SPACE_RATIO": 0.30,
+						"CHARACTER_DISTANCE_RATIO": 0.0,
+						"TEXT_COORDINATE_PORTRAIT": [ 39.0, 86.0 ],
+						"TEXT_COORDINATE_LANDSCAPE": [ 30.0, 70.0 ],
+						"RENDER_DIRECTION": 0,
+						"RELY_ON_ELEM": false
+					},
+
+
+					"TEXT_IMAGING": {
+						"FONT_PROFILE": {
+							"FONT_FILE_NAME": "HurmeGeometricSans3_SemiBold.otf",
+							"FONT_SIZE_PORTRAIT": 23.0,
+							"FONT_SIZE_LANDSCAPE": 18.0,
+							"FONT_COLOR": [ 0.0, 0.0, 0.0 ],
+							"FONT_INTENSITY": 1.0
+						},
+						"SPACE_RATIO": 0.30,
+						"CHARACTER_DISTANCE_RATIO": 0.0,
+						"TEXT_COORDINATE_PORTRAIT": [ 1041.0, 68.0 ],
+						"TEXT_COORDINATE_LANDSCAPE": [ 1050.0, 57.0 ],
+						"RENDER_DIRECTION": 1,
+						"RELY_ON_ELEM": false
+					}
+				},
+
+
+
+
+				{
+					"RENDER_MODE": 3,
+					"ICON_PROFILE": {
+						"ICON_FILE_NAME": "RedPoint-kl.svg",
+						"ICON_COORDINATE_PORTRAIT": [ 0.0, 53.0 ],
+						"ICON_COORDINATE_LANDSCAPE": [ 0.0, 45.0 ],
+						"TUNING_COORDINATE_PORTRAIT": [ -10.0, 0.0 ],
+						"TUNING_COORDINATE_LANDSCAPE": [ -10.0, 0.0 ],
+						"ICON_WIDTH_PORTRAIT": 23.0,
+						"ICON_WIDTH_LANDSCAPE": 18.0,
+						"ICON_HEIGHT_PORTRAIT": 23.0,
+						"ICON_HEIGHT_LANDSCAPE": 18.0,
+						"RELY_ON_ELEM": true,
+						"RELY_INFORMATION": {
+							"这是一条提示信息：@RELY_TYPE": "0=TEXT; 1=ICON",
+							"RELY_TYPE": 0,
+							"RELY_INDEX": 1,
+							"RELT_ON_LEFT_X": true,
+							"RELATIVE_X": 0.0
+						}
+					},
+
+
+					"TEXT_BRAND": {
+						"FONT_PROFILE": {
+							"FONT_FILE_NAME": "HurmeGeometricSans3_SemiBold.otf",
+							"FONT_SIZE_PORTRAIT": 29.0,
+							"FONT_SIZE_LANDSCAPE": 22.0,
+							"FONT_COLOR": [ 0.0, 0.0, 0.0 ],
+							"FONT_INTENSITY": 1.0
+						},
+						"SPACE_RATIO": 0.30,
+						"CHARACTER_DISTANCE_RATIO": 0.0,
+						"TEXT_COORDINATE_PORTRAIT": [ 39.0, 71.0 ],
+						"TEXT_COORDINATE_LANDSCAPE": [ 30.0, 61.0 ],
+						"RENDER_DIRECTION": 0,
+						"RELY_ON_ELEM": false
+					},
+
+
+					"TEXT_IMAGING": {
+						"FONT_PROFILE": {
+							"FONT_FILE_NAME": "HurmeGeometricSans3_SemiBold.otf",
+							"FONT_SIZE_PORTRAIT": 23.0,
+							"FONT_SIZE_LANDSCAPE": 18.0,
+							"FONT_COLOR": [ 0.0, 0.0, 0.0 ],
+							"FONT_INTENSITY": 1.0
+						},
+						"SPACE_RATIO": 0.30,
+						"CHARACTER_DISTANCE_RATIO": 0.0,
+						"TEXT_COORDINATE_PORTRAIT": [ 1041.0, 53.0 ],
+						"TEXT_COORDINATE_LANDSCAPE": [ 1050.0, 45.0 ],
+						"RENDER_DIRECTION": 1,
+						"RELY_ON_ELEM": false
+					},
+
+
+					"TEXT_LONGITUDEANDLATITUDE": {
+						"FONT_PROFILE": {
+							"FONT_FILE_NAME": "HurmeGeometricSans_No3_4_Regular.otf",
+							"FONT_SIZE_PORTRAIT": 19.0,
+							"FONT_SIZE_LANDSCAPE": 15.0,
+							"FONT_COLOR": [ 0.0, 0.0, 0.0 ],
+							"FONT_INTENSITY": 0.5
+						},
+						"SPACE_RATIO": 0.30,
+						"CHARACTER_DISTANCE_RATIO": 0.0,
+						"TEXT_COORDINATE_PORTRAIT": [ 0.0, 85.0 ],
+						"TEXT_COORDINATE_LANDSCAPE": [ 0.0, 70.0 ],
+						"RENDER_DIRECTION": 0,
+						"RELY_ON_ELEM": true,
+						"RELY_INFORMATION": {
+							"这是一条提示信息：@RELY_TYPE": "0=TEXT; 1=ICON",
+							"RELY_TYPE": 0,
+							"RELY_INDEX": 1,
+							"RELT_ON_LEFT_X": true,
+							"RELATIVE_X": 0.0
+						}
+					}
+				},
+
+
+
+				{
+					"RENDER_MODE": 4,
+					"ICON_PROFILE": {
+						"ICON_FILE_NAME": "RedPoint-kl.svg",
+						"ICON_COORDINATE_PORTRAIT": [ 0.0, 53.0 ],
+						"ICON_COORDINATE_LANDSCAPE": [ 0.0, 45.0 ],
+						"TUNING_COORDINATE_PORTRAIT": [ -10.0, 0.0 ],
+						"TUNING_COORDINATE_LANDSCAPE": [ -10.0, 0.0 ],
+						"ICON_WIDTH_PORTRAIT": 23.0,
+						"ICON_WIDTH_LANDSCAPE": 18.0,
+						"ICON_HEIGHT_PORTRAIT": 23.0,
+						"ICON_HEIGHT_LANDSCAPE": 18.0,
+						"RELY_ON_ELEM": true,
+						"RELY_INFORMATION": {
+							"这是一条提示信息：@RELY_TYPE": "0=TEXT; 1=ICON",
+							"RELY_TYPE": 0,
+							"RELY_INDEX": 2,
+							"RELT_ON_LEFT_X": true,
+							"RELATIVE_X": 0.0
+						}
+					},
+
+
+
+					"TEXT_BRAND": {
+						"FONT_PROFILE": {
+							"FONT_FILE_NAME": "HurmeGeometricSans3_SemiBold.otf",
+							"FONT_SIZE_PORTRAIT": 24.0,
+							"FONT_SIZE_LANDSCAPE": 18.0,
+							"FONT_COLOR": [ 0.0, 0.0, 0.0 ],
+							"FONT_INTENSITY": 1.0
+						},
+						"SPACE_RATIO": 0.30,
+						"CHARACTER_DISTANCE_RATIO": 0.0,
+						"TEXT_COORDINATE_PORTRAIT": [ 39.0, 54.0 ],
+						"TEXT_COORDINATE_LANDSCAPE": [ 30.0, 46.0 ],
+						"RENDER_DIRECTION": 0,
+						"RELY_ON_ELEM": false
+					},
+
+
+
+					"TEXT_DATE_AND_TIME": {
+						"FONT_PROFILE": {
+							"FONT_FILE_NAME": "HurmeGeometricSans_No3_4_Regular.otf",
+							"FONT_SIZE_PORTRAIT": 19.0,
+							"FONT_SIZE_LANDSCAPE": 15.0,
+							"FONT_COLOR": [ 0.0, 0.0, 0.0 ],
+							"FONT_INTENSITY": 0.5
+						},
+						"SPACE_RATIO": 0.30,
+						"CHARACTER_DISTANCE_RATIO": 0.0,
+						"TEXT_COORDINATE_PORTRAIT": [ 39.0, 86.0 ],
+						"TEXT_COORDINATE_LANDSCAPE": [ 30.0, 70.0 ],
+						"RENDER_DIRECTION": 0,
+						"RELY_ON_ELEM": false
+					},
+
+
+
+					"TEXT_IMAGING": {
+						"FONT_PROFILE": {
+							"FONT_FILE_NAME": "HurmeGeometricSans3_SemiBold.otf",
+							"FONT_SIZE_PORTRAIT": 23.0,
+							"FONT_SIZE_LANDSCAPE": 18.0,
+							"FONT_COLOR": [ 0.0, 0.0, 0.0 ],
+							"FONT_INTENSITY": 1.0
+						},
+						"SPACE_RATIO": 0.30,
+						"CHARACTER_DISTANCE_RATIO": 0.0,
+						"TEXT_COORDINATE_PORTRAIT": [ 1041.0, 53.0 ],
+						"TEXT_COORDINATE_LANDSCAPE": [ 1050.0, 45.0 ],
+						"RENDER_DIRECTION": 1,
+						"RELY_ON_ELEM": false
+					},
+
+
+
+					"TEXT_LONGITUDEANDLATITUDE": {
+						"FONT_PROFILE": {
+							"FONT_FILE_NAME": "HurmeGeometricSans_No3_4_Regular.otf",
+							"FONT_SIZE_PORTRAIT": 19.0,
+							"FONT_SIZE_LANDSCAPE": 15.0,
+							"FONT_COLOR": [ 0.0, 0.0, 0.0 ],
+							"FONT_INTENSITY": 0.5
+						},
+						"SPACE_RATIO": 0.30,
+						"CHARACTER_DISTANCE_RATIO": 0.0,
+						"TEXT_COORDINATE_PORTRAIT": [ 0.0, 85.0 ],
+						"TEXT_COORDINATE_LANDSCAPE": [ 0.0, 70.0 ],
+						"RENDER_DIRECTION": 0,
+						"RELY_ON_ELEM": true,
+						"RELY_INFORMATION": {
+							"这是一条提示信息：@RELY_TYPE": "0=TEXT; 1=ICON",
+							"RELY_TYPE": 0,
+							"RELY_INDEX": 2,
+							"RELT_ON_LEFT_X": true,
+							"RELATIVE_X": 0.0
+						}
+					}
+				}
+			]
+		}
+	}
+}

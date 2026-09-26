@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- These resources are used to distinguish common scenarios and are preferentially used -->
+<WHITELIST>
+    <Package name="com.zhiliaoapp.musically.go">
+        <Activity name="com.ss.android.ugc.aweme.main.homepage.MainActivity" >
+            <FPS value="Common">
+                <FLINGMODE value="Common">
+                        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1800000"></data>
+                        <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_1" param1="1900000"></data>
+                </FLINGMODE>
+            </FPS>
+        </Activity>
+    </Package>
+
+    <Package name="com.instagram.android">
+        <Activity name="com.instagram.mainactivity.MainActivity" >
+            <FPS value="Common">
+                <FLINGMODE value="Common">
+                        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1800000"></data>
+                        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="2000000"></data>
+                </FLINGMODE>
+            </FPS>
+        </Activity>
+    </Package>
+
+    <Package name="com.playit.videoplayer">
+        <Activity name="Common" >
+            <FPS value="Common">
+                <FLINGMODE value="Common">
+                        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1800000"></data>
+                        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="2000000"></data>
+                </FLINGMODE>
+            </FPS>
+        </Activity>
+    </Package>
+
+    <Package name="com.mxtech.videoplayer.ad">
+        <Activity name="Common" >
+            <FPS value="Common">
+                <FLINGMODE value="Common">
+                        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1800000"></data>
+                        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="2000000"></data>
+                </FLINGMODE>
+            </FPS>
+        </Activity>
+    </Package>
+
+    <Package name="com.transsion.hilauncher">
+        <Activity name="Common" >
+            <FPS value="Common">
+                <FLINGMODE value="Common">
+                        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1800000"></data>
+                        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="2000000"></data>
+                </FLINGMODE>
+            </FPS>
+        </Activity>
+    </Package>
+
+    <Package name="com.android.settings">
+        <Activity name="Common" >
+            <FPS value="Common">
+                <FLINGMODE value="Common">
+                        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1800000"></data>
+                        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="2000000"></data>
+                </FLINGMODE>
+            </FPS>
+        </Activity>
+    </Package>
+
+   <Package name="com.ss.android.ugc.aweme">
+        <Activity name="Common" >
+            <FPS value="Common">
+                <FLINGMODE value="Common">
+                        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1800000"></data>
+                        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="2000000"></data>
+                </FLINGMODE>
+            </FPS>
+        </Activity>
+    </Package>
+
+    <Package name="com.truecaller">
+        <Activity name="Common" >
+            <FPS value="Common">
+                <FLINGMODE value="Common">
+                        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1800000"></data>
+                        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="2000000"></data>
+                </FLINGMODE>
+            </FPS>
+        </Activity>
+    </Package>
+
+    <Package name="com.google.android.youtube">
+        <Activity name="Common" >
+            <FPS value="Common">
+                <FLINGMODE value="FLING">
+                    <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1800000"></data>
+                    <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="2000000"></data>
+                </FLINGMODE>
+            </FPS>
+        </Activity>
+    </Package>
+
+    <Package name="com.sh.smart.caller">
+        <Activity name="com.android.dialer.main.impl.MainActivity" >
+            <FPS value="Common">
+                <FLINGMODE value="Common">
+                    <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1800000"></data>
+                    <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="2000000"></data>
+                </FLINGMODE>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.android.vending">
+        <Activity name="Common" >
+            <FPS value="Common">
+                <FLINGMODE value="Common">
+                    <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1800000"></data>
+                    <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="2000000"></data>
+                </FLINGMODE>
+            </FPS>
+        </Activity>
+    </Package>
+</WHITELIST>    
