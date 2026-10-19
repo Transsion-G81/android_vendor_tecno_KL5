@@ -15,19 +15,23 @@
 #                                          (also pulled in via shared_libs
 #                                          of libcameracustom; listed in
 #                                          PRODUCT_PACKAGES for explicitness)
-#   * tuning / hdr adapter / anc_siq    -> PRODUCT_COPY_FILES below (dlopen'ed)
+#   * tuning / hdr adapter / anc_siq    -> prebuilt modules in
+#                                          proprietary_kl5n/Android.bp
+#                                          (dlopen'ed; ELF blobs cannot
+#                                          live in PRODUCT_COPY_FILES)
+#                                          + anc_siq data via copy files
 #   * imgsensor_isp4.ko                 -> BoardConfig.mk
 #                                          (BOARD_VENDOR_KERNEL_MODULES swap)
 #
 
 PRODUCT_PACKAGES += \
     imx582_mipi_raw_IdxMgr \
-    pblcimx582_mipi_raw_IdxMgr
+    pblcimx582_mipi_raw_IdxMgr \
+    imx582_mipi_raw_tuning \
+    pblcimx582_mipi_raw_tuning \
+    libanc_hdr_adapter_imx582_17201932_back_g81
 
 PRODUCT_COPY_FILES += \
-    vendor/tecno/KL5/proprietary_kl5n/vendor/lib64/imx582_mipi_raw_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/imx582_mipi_raw_tuning.so \
-    vendor/tecno/KL5/proprietary_kl5n/vendor/lib64/pblcimx582_mipi_raw_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/pblcimx582_mipi_raw_tuning.so \
-    vendor/tecno/KL5/proprietary_kl5n/vendor/lib64/libanc_hdr_adapter_imx582_17201932_back_g81.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libanc_hdr_adapter_imx582_17201932_back_g81.so \
     vendor/tecno/KL5/proprietary_kl5n/vendor/etc/anc_siq/cache_imx582_17201932_back_g81:$(TARGET_COPY_OUT_VENDOR)/etc/anc_siq/cache_imx582_17201932_back_g81 \
     vendor/tecno/KL5/proprietary_kl5n/vendor/etc/anc_siq/dgain_mask_imx582_17201932_back_g81.bin:$(TARGET_COPY_OUT_VENDOR)/etc/anc_siq/dgain_mask_imx582_17201932_back_g81.bin \
     vendor/tecno/KL5/proprietary_kl5n/vendor/etc/anc_siq/siq_ocl_cache_imx582_17201932_back_g81:$(TARGET_COPY_OUT_VENDOR)/etc/anc_siq/siq_ocl_cache_imx582_17201932_back_g81 \

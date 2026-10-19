@@ -58,3 +58,83 @@ cc_prebuilt_library_shared {
     prefer: true,
     soc_specific: true,
 }
+
+// dlopen'ed camera tuning / HDR-adapter blobs + NXP NFC firmware blob.
+// Shipped as prebuilts instead of PRODUCT_COPY_FILES because the build
+// rejects ELF files in copy files (check-non-elf-file).  Not linked by
+// anything in the build graph, so check_elf_files is disabled.
+cc_prebuilt_library_shared {
+    name: "imx582_mipi_raw_tuning",
+    owner: "tecno",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "vendor/lib64/imx582_mipi_raw_tuning.so",
+            ],
+        },
+    },
+    check_elf_files: false,
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "pblcimx582_mipi_raw_tuning",
+    owner: "tecno",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "vendor/lib64/pblcimx582_mipi_raw_tuning.so",
+            ],
+        },
+    },
+    check_elf_files: false,
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libanc_hdr_adapter_imx582_17201932_back_g81",
+    owner: "tecno",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "vendor/lib64/libanc_hdr_adapter_imx582_17201932_back_g81.so",
+            ],
+        },
+    },
+    check_elf_files: false,
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libpn557_fw",
+    owner: "tecno",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "vendor/lib64/libpn557_fw.so",
+            ],
+        },
+    },
+    check_elf_files: false,
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}

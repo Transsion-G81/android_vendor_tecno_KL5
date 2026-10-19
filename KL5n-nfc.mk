@@ -25,12 +25,15 @@
 #   * The source HAL reads /vendor/etc/libnfc-nxp.conf (NXP_NFC_DEV_NODE=
 #     /dev/pn553, NXP_FW_NAME=libpn557_fw.so), /vendor/etc/libnfc-nci.conf,
 #     /vendor/libnfc-nxp_RF.conf (halimpl hardcodes that path) and
-#     /vendor/etc/libnfc-slm.conf.
+#     /vendor/etc/libnfc-slm.conf.  Firmware (libpn557_fw.so) is a
+#     cc_prebuilt_library_shared (ELF prebuilts are banned from
+#     PRODUCT_COPY_FILES).
 #
 
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
     com.android.nfc_extras \
+    libpn557_fw \
     Tag
 
 # AOSP feature permissions (stock installs these under vendor/etc/permissions)
@@ -46,7 +49,6 @@ PRODUCT_COPY_FILES += \
     vendor/tecno/KL5/proprietary_kl5n/vendor/etc/libnfc-slm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-slm.conf \
     vendor/tecno/KL5/proprietary_kl5n/vendor/libnfc-nxp_RF.conf:$(TARGET_COPY_OUT_VENDOR)/libnfc-nxp_RF.conf \
     vendor/tecno/KL5/proprietary_kl5n/vendor/etc/init/init.nxp.nfc.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.nxp.nfc.rc \
-    vendor/tecno/KL5/proprietary_kl5n/vendor/lib64/libpn557_fw.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libpn557_fw.so \
     vendor/tecno/KL5/proprietary_kl5n/vendor/etc/permissions/com.nxp.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.nfc.xml \
     vendor/tecno/KL5/proprietary_kl5n/vendor/etc/permissions/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
     vendor/tecno/KL5/proprietary_kl5n/vendor/etc/permissions/com.nxp.ls.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.ls.xml
