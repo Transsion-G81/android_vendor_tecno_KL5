@@ -11783,7 +11783,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libmnl",
+    name: "libmnl_kl5",
+    stem: "libmnl",
     owner: "tecno",
     strip: {
         none: true,
@@ -19237,7 +19238,7 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/mnld",
             ],
             shared_libs: [
-                "libmnl",
+                "libmnl_kl5",
                 "libcurl",
                 "libcutils",
                 "libnvram",
