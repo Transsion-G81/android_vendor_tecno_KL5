@@ -9909,17 +9909,40 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-cc_prebuilt_library_shared {
+// ---------------------------------------------------------------------------
+// HAND PATCH — KL5 / KL5n camera split (see device/tecno/KL5/README.md).
+// If you regenerate this file with extract-files.py --regenerate_makefiles,
+// the module below reverts to a plain cc_prebuilt_library_shared with the
+// KL5 srcs only — re-apply this whole block (soong_config definitions +
+// cc_prebuilt_library_shared_camera_variant module) afterwards.
+// The soong config variable must be set by EVERY product makefile
+// (lineage_KL5.mk: kl5, lineage_KL5n.mk: kl5n) because soong_config list
+// properties APPEND — a base srcs entry plus a branch entry would yield
+// two files and break the prebuilt.
+// ---------------------------------------------------------------------------
+soong_config_string_variable {
+    name: "camera_variant",
+    values: ["kl5", "kl5n"],
+}
+
+soong_config_module_type {
+    name: "cc_prebuilt_library_shared_camera_variant",
+    module_type: "cc_prebuilt_library_shared",
+    config_namespace: "tecno_camera",
+    variables: ["camera_variant"],
+    properties: ["srcs"],
+}
+
+cc_prebuilt_library_shared_camera_variant {
     name: "libcameracustom",
     owner: "tecno",
     strip: {
         none: true,
     },
+    // shared_libs is the UNION of both variants' DT_NEEDED sets so the
+    // elf checker passes for either binary; extra entries are harmless.
     target: {
         android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libcameracustom.so",
-            ],
             shared_libs: [
                 "liblog",
                 "libutils",
@@ -9947,12 +9970,28 @@ cc_prebuilt_library_shared {
                 "pblcgc08a8_mipi_raw_IdxMgr",
                 "pblchi846_mipi_raw_IdxMgr",
                 "pblcfake_serial_yuv_IdxMgr",
+                "imx582_mipi_raw_IdxMgr",
+                "pblcimx582_mipi_raw_IdxMgr",
                 "libnvram",
                 "libc++",
                 "libc",
                 "libm",
                 "libdl",
             ],
+        },
+    },
+    soong_config_variables: {
+        camera_variant: {
+            kl5: {
+                srcs: [
+                    "proprietary/vendor/lib64/libcameracustom.so",
+                ],
+            },
+            kl5n: {
+                srcs: [
+                    "proprietary_kl5n/vendor/lib64/libcameracustom.so",
+                ],
+            },
         },
     },
     compile_multilib: "64",
