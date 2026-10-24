@@ -180,62 +180,14 @@ cc_prebuilt_binary {
     soc_specific: true,
 }
 
-cc_prebuilt_library_shared {
-    name: "libsecure_element_mediatek_1_0",
-    owner: "tecno",
-    stem: "android.hardware.secure_element@1.0",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "vendor/lib64/android.hardware.secure_element@1.0.so",
-            ],
-        },
-    },
-    check_elf_files: false,
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
+// The HIDL interface libraries android.hardware.secure_element@1.{0,1,2}.so
+// are NOT packaged from the vendor blobs below: hardware/interfaces/secure_
+// element/1.{0,1,2} are hidl_interface modules whose module name *is* the
+// soname, and they install vendor/lib64/android.hardware.secure_element@1.x.so
+// themselves.  Packaging the blobs too makes two modules generate that path:
+//   FAILED: multiple rules generate out/target/product/KL5/symbols/vendor/
+//   lib64/android.hardware.secure_element@1.0.so [-w dupbuild=err]
+// KL5n-nfc.mk therefore requests the platform modules instead; the blobs stay
+// in git for reference (they are what the stock ROM ships).
 
-cc_prebuilt_library_shared {
-    name: "libsecure_element_mediatek_1_1",
-    owner: "tecno",
-    stem: "android.hardware.secure_element@1.1",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "vendor/lib64/android.hardware.secure_element@1.1.so",
-            ],
-        },
-    },
-    check_elf_files: false,
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libsecure_element_mediatek_1_2",
-    owner: "tecno",
-    stem: "android.hardware.secure_element@1.2",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "vendor/lib64/android.hardware.secure_element@1.2.so",
-            ],
-        },
-    },
-    check_elf_files: false,
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
+// (no @1.x modules here on purpose - see the note above)
