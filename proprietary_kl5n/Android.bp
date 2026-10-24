@@ -138,3 +138,104 @@ cc_prebuilt_library_shared {
     prefer: true,
     soc_specific: true,
 }
+
+// ---------------------------------------------------------------------------
+// KL5n Secure Element HAL (MTK/Transsion prebuilt, Android 14 blob).
+//
+// The ROM's platform sepolicy already expects this binary - both
+// system/sepolicy's generic rule
+//   /(vendor|system/vendor)/bin/hw/android\.hardware\.secure_element@1\.[0-9]+-service-mediatek
+//     u:object_r:mtk_hal_secure_element_exec:s0
+// and the allow rules for domain mtk_hal_secure_element (incl.
+// mtk_hal_secure_element -> secure_element_device / nfc_data_vendor_file)
+// ship with the platform - it was simply never packaged, so com.android.se
+// had no readers and the NFC stack's SE discovery (CMD_CE_DISC_NCI) timed out
+// on every enable.  With these blobs present + the device manifest declaring
+// ISecureElement SIM1/SIM2, com.android.se binds to it
+// (log: "SecureElement-Terminal-SIM1").
+//
+// The service file name must stay verbatim: the platform label rule and the
+// .rc service declaration both key off it, so the Soong module name is
+// @-free and `stem` carries the real name.
+// ---------------------------------------------------------------------------
+
+cc_prebuilt_binary {
+    name: "secure_element_mediatek_hal",
+    owner: "tecno",
+    stem: "android.hardware.secure_element@1.2-service-mediatek",
+    relative_install_path: "hw",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek",
+            ],
+        },
+    },
+    check_elf_files: false,
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsecure_element_mediatek_1_0",
+    owner: "tecno",
+    stem: "android.hardware.secure_element@1.0",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "vendor/lib64/android.hardware.secure_element@1.0.so",
+            ],
+        },
+    },
+    check_elf_files: false,
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsecure_element_mediatek_1_1",
+    owner: "tecno",
+    stem: "android.hardware.secure_element@1.1",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "vendor/lib64/android.hardware.secure_element@1.1.so",
+            ],
+        },
+    },
+    check_elf_files: false,
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsecure_element_mediatek_1_2",
+    owner: "tecno",
+    stem: "android.hardware.secure_element@1.2",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "vendor/lib64/android.hardware.secure_element@1.2.so",
+            ],
+        },
+    },
+    check_elf_files: false,
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}

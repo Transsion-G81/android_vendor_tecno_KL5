@@ -36,6 +36,20 @@ PRODUCT_PACKAGES += \
     libpn557_fw \
     Tag
 
+# KL5n Secure Element HAL (SIM-based SE) - MTK/Transsion prebuilt, Android 14.
+# Needed for NFC-SIM card emulation / payments: without it com.android.se has no
+# readers and the NFC stack's SE discovery times out on every enable.  The
+# platform sepolicy already carries the label
+# (android.hardware.secure_element@1.[0-9]+-service-mediatek -> mtk_hal_secure_element_exec)
+# and the allow rules for domain mtk_hal_secure_element, so no sepolicy change
+# is required - only the blobs + the device manifest declaration of
+# android.hardware.secure_element@1.2 (SIM1/SIM2, see device/tecno/KL5/manifest.xml).
+PRODUCT_PACKAGES += \
+    secure_element_mediatek_hal \
+    libsecure_element_mediatek_1_0 \
+    libsecure_element_mediatek_1_1 \
+    libsecure_element_mediatek_1_2
+
 # AOSP feature permissions (stock installs these under vendor/etc/permissions)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
@@ -51,4 +65,5 @@ PRODUCT_COPY_FILES += \
     vendor/tecno/KL5/proprietary_kl5n/vendor/etc/init/init.nxp.nfc.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.nxp.nfc.rc \
     vendor/tecno/KL5/proprietary_kl5n/vendor/etc/permissions/com.nxp.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.nfc.xml \
     vendor/tecno/KL5/proprietary_kl5n/vendor/etc/permissions/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
-    vendor/tecno/KL5/proprietary_kl5n/vendor/etc/permissions/com.nxp.ls.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.ls.xml
+    vendor/tecno/KL5/proprietary_kl5n/vendor/etc/permissions/com.nxp.ls.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.ls.xml \
+    vendor/tecno/KL5/proprietary_kl5n/vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
