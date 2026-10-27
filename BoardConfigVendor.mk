@@ -7,6 +7,7 @@ AB_OTA_PARTITIONS += \
     lk \
     logo \
     md1img \
+    preloader \
     scp \
     spmfw \
     sspm \
