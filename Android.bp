@@ -9992,6 +9992,21 @@ cc_prebuilt_library_shared_camera_variant {
                     "proprietary_kl5n/vendor/lib64/libcameracustom.so",
                 ],
             },
+            // Every other product needs this module to still resolve: 33 modules
+            // in this file list libcameracustom in shared_libs, and a
+            // cc_prebuilt_library_shared with no srcs has no shared variant, so
+            // those dependencies fail with:
+            //   module "libmtkcam_sysutils" ...: module "libcameracustom" is not
+            //   a shared library
+            // when tecno_camera.camera_variant is unset (i.e. building another
+            // device in the same tree, e.g. X6532).  The KL5 and KL5n products
+            // still pick their own blob above; this is only a fallback and the
+            // module is not installed by products that do not package it.
+            conditions_default: {
+                srcs: [
+                    "proprietary_kl5n/vendor/lib64/libcameracustom.so",
+                ],
+            },
         },
     },
     compile_multilib: "64",
@@ -11783,7 +11798,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libmnl",
+    name: "libmnl_kl5",
+    stem: "libmnl",
     owner: "tecno",
     strip: {
         none: true,
@@ -19237,7 +19253,7 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/mnld",
             ],
             shared_libs: [
-                "libmnl",
+                "libmnl_kl5",
                 "libcurl",
                 "libcutils",
                 "libnvram",
