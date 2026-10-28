@@ -751,7 +751,7 @@ PRODUCT_PACKAGES += \
     libmmagent \
     libmml \
     libmnetlink_v104 \
-    libmnl \
+    libmnl_kl5 \
     libmorpho_HDSR \
     libmpbase \
     libmsnr \
