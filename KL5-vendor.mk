@@ -866,6 +866,7 @@ PRODUCT_PACKAGES += \
     libpqparamparser \
     libpqpconfig \
     libqmc6308_kl5 \
+    libqmc6308_kl5n \
     libratconfig \
     libremosaic_wrapper \
     libremosaiclib \
