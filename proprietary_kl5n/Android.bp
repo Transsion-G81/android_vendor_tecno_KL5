@@ -172,6 +172,15 @@ cc_prebuilt_binary {
             srcs: [
                 "vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek",
             ],
+            // Pull the platform HIDL interface modules' vendor variants into
+            // the build so they land in vendor/lib64 where this binary's
+            // dynamic linker looks for them.  The system variants are still
+            // requested via PRODUCT_PACKAGES for com.android.se.
+            shared_libs: [
+                "android.hardware.secure_element@1.0",
+                "android.hardware.secure_element@1.1",
+                "android.hardware.secure_element@1.2",
+            ],
         },
     },
     check_elf_files: false,
@@ -180,14 +189,9 @@ cc_prebuilt_binary {
     soc_specific: true,
 }
 
-// The HIDL interface libraries android.hardware.secure_element@1.{0,1,2}.so
-// are NOT packaged from the vendor blobs below: hardware/interfaces/secure_
-// element/1.{0,1,2} are hidl_interface modules whose module name *is* the
-// soname, and they install vendor/lib64/android.hardware.secure_element@1.x.so
-// themselves.  Packaging the blobs too makes two modules generate that path:
-//   FAILED: multiple rules generate out/target/product/KL5/symbols/vendor/
-//   lib64/android.hardware.secure_element@1.0.so [-w dupbuild=err]
-// KL5n-nfc.mk therefore requests the platform modules instead; the blobs stay
-// in git for reference (they are what the stock ROM ships).
-
-// (no @1.x modules here on purpose - see the note above)
+// The HIDL interface libraries are built by the platform hidl_interface
+// modules (hardware/interfaces/secure_element/1.{0,1,2}).  They already have
+// vendor/lib64 install rules; listing them in the HAL's shared_libs above is
+// enough to pull those rules into the build.  Do not add prebuilt copies of
+// the stock blobs here - that would create a second rule for the same
+// vendor/lib64 path.  The stock blobs stay in git for reference only.

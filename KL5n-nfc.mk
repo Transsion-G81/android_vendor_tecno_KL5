@@ -20,12 +20,10 @@ PRODUCT_PACKAGES += \
 # and the allow rules for domain mtk_hal_secure_element, so no sepolicy change
 # is required - only the blobs + the device manifest declaration of
 # android.hardware.secure_element@1.2 (SIM1/SIM2, see device/tecno/KL5/manifest.xml).
-# The @1.x interface libraries are taken from the platform
-# (hardware/interfaces/secure_element/1.{0,1,2}): its hidl_interface modules
-# already install vendor/lib64/android.hardware.secure_element@1.x.so, so
-# packaging the matching stock blobs as well gives two rules for one file:
-#   FAILED: multiple rules generate out/target/product/KL5/symbols/vendor/lib64/
-#   android.hardware.secure_element@1.0.so [-w dupbuild=err]
+# The HAL DT_NEEDEDs the @1.x interface libraries.  The platform
+# hidl_interface modules build both system and vendor variants; requesting
+# them here covers com.android.se on system, while the HAL's shared_libs
+# pulls the vendor variants into vendor/lib64.
 PRODUCT_PACKAGES += \
     secure_element_mediatek_hal \
     android.hardware.secure_element@1.0 \
