@@ -2,8 +2,12 @@ service mtk_secure_element_hal_service /vendor/bin/hw/android.hardware.secure_el
     class hal
     user secure_element
     group secure_element
-    # Let com.android.se start the HAL on demand via ctl.interface_start;
-    # without these the lazy-start lookup fails with
-    # PROP_ERROR_HANDLE_CONTROL_MESSAGE (0x20).
+    # Let com.android.se start the HAL on demand via ctl.interface_start.
+    # HIDL @1.2 extends @1.1 extends @1.0, so host_init_verifier requires
+    # the full inheritance hierarchy to be declared here.
+    interface android.hardware.secure_element@1.0::ISecureElement SIM1
+    interface android.hardware.secure_element@1.0::ISecureElement SIM2
+    interface android.hardware.secure_element@1.1::ISecureElement SIM1
+    interface android.hardware.secure_element@1.1::ISecureElement SIM2
     interface android.hardware.secure_element@1.2::ISecureElement SIM1
     interface android.hardware.secure_element@1.2::ISecureElement SIM2
